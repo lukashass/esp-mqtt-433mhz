@@ -75,8 +75,10 @@ void callback(char* topic, byte* payload, unsigned int length) {
 
         int code = root["code"];
         int protocol = root["protocol"];
+        int pulseLength = root["pulseLength"];
 
         mySwitch.setProtocol(protocol);
+        mySwitch.setPulseLength(pulseLength);
         mySwitch.send(code, 24);
 }
 
