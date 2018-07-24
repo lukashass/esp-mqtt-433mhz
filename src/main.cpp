@@ -55,6 +55,7 @@ void setup_wifi() {
         Serial.print("Connecting to ");
         Serial.println(WIFI_SSID);
 
+        WiFi.mode(WIFI_STA); // only connect to network, dont open AP
         WiFi.begin(WIFI_SSID, WIFI_PASS);
 
         while (WiFi.status() != WL_CONNECTED) {
